@@ -48,10 +48,10 @@
 							@if ( !Auth::user()->image )
 								<i class='fa fa-user-secret'></i>
 							@else
-								<img class="user-img" src='images/{{ Auth::user()->image }}' alt="profile picture">
+								<img class="user-img" src='/images/{{ Auth::user()->image }}' alt="profile picture">
 							@endif
 						</div>
-						<div class="username float-xs-left">{{ Auth::user()->name }}</div>
+						<div id='{{ Auth::user()->id }}' class="username float-xs-left">{{ Auth::user()->name }}</div>
 					</button>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdownBtn">
 						<a class="dropdown-item" href="/myProfile">Profile</a>

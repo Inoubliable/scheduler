@@ -23,7 +23,8 @@ class HomeController extends Controller
 
     public function index () {
 		
-		$schedules = App\PersonalSchedule::where('user_id', '=', Auth::user()->id)->get();
+		// get schedules from newest to oldest
+		$schedules = App\PersonalSchedule::where('user_id', '=', Auth::user()->id)->get()->reverse();
 		
 		foreach ($schedules as $schedule) {
 			
@@ -34,7 +35,23 @@ class HomeController extends Controller
 			
 		}
 		
-		return view('home', ['schedules' => $schedules]);
+		// get friends
+		$friends = [];
+		$user_id = Auth::user()->id;
+		
+		$friends1 = DB::table('friends')->where('id_one', '=', $user_id)->get(['id_two']);
+		foreach($friends1 as $friend) {
+			$user = DB::table('users')->where('id', '=', $friend->id_two)->first();
+			array_push($friends, $user);
+		}
+		
+		$friends2 = DB::table('friends')->where('id_two', '=', $user_id)->get(['id_one']);
+		foreach($friends2 as $friend) {
+			$user = DB::table('users')->where('id', '=', $friend->id_one)->first();
+			array_push($friends, $user);
+		}
+		
+		return view('home', ['schedules' => $schedules, 'friends' => $friends]);
 		
 	}
     
@@ -50,7 +67,7 @@ class HomeController extends Controller
 		$schedule->save();
 		
 		foreach ($users as $user) {
-			$user_id = DB::table('users')->where('name', '=', $user)->get(['id']);
+			$user_id = DB::table('users')->where('name', '=', $user)->first();
 			
 			$personal_schedule = new App\PersonalSchedule;
 			$personal_schedule->user_id = $user_id->id;
@@ -58,7 +75,19 @@ class HomeController extends Controller
 			$schedule->personalSchedules()->save($personal_schedule);
 		}
 		
-		return 'Schedule successfully created!';
+		// get schedules
+		$schedules = App\PersonalSchedule::where('user_id', '=', Auth::user()->id)->get();
+		
+		foreach ($schedules as $schedule) {
+			
+			$dateString = $schedule->schedule->startDate;
+			$date = DateTime::createFromFormat("Y-m-d", $dateString);
+			$schedule->day = $date->format("d");
+			$schedule->month = $date->format("m");
+			
+		}
+		
+		return $schedules;
 		
 	}
 }

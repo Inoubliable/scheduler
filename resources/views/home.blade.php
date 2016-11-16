@@ -23,12 +23,12 @@
 					</button>
 					<div class="dropdown-menu" aria-labelledby="all-users-dropdown-btn">
 						<ul class="all-users-list list-group">
-							@foreach (App\User::all() as $user)
+							@foreach ($friends as $friend)
 								<li class='list-group-item'>
-									@if ($user->image)
-										<img src='images/{{ $user->image }}'>{{ $user->name }}
+									@if ($friend->image)
+										<img src='images/{{ $user->image }}'>{{ $friend->name }}
 									@else
-										<i class='fa fa-user-secret'></i>{{ $user->name }}
+										<i class='fa fa-user-secret'></i>{{ $friend->name }}
 									@endif
 								</li>
 							@endforeach
@@ -44,7 +44,7 @@
 		
 				<div class="row">
 					<div class="col-md-9 text-xs-center">
-						<table id={{ $schedule->schedule_id }} data-bits={{ $schedule->bits }} data-day={{ $schedule->day }} data-month={{ $schedule->month }} class="table table-striped table-bordered table-hover main-tables">
+						<table id={{ $schedule->schedule_id }} data-bits={{ $schedule->bits }} data-day={{ $schedule->day }} data-month={{ $schedule->month }} class="table table-striped table-bordered table-hover main-tables mt-1">
 							<thead class="thead-inverse">
 								<tr>
 									<th></th>
@@ -164,8 +164,11 @@
 		
 					</div>
 		
-					<div class="names-container col-md-3">
-						<ul class="names list-group"></ul>
+					<div class="col-md-3 mt-1 names-container">
+						<div class="card">
+							<div class="card-header"><i class="fa fa-check"></i></div>
+							<ul class="names list-group"></ul>
+						</div>
 					</div>
 				</div>
 				

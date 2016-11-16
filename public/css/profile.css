@@ -73,6 +73,11 @@ a.active {
 /* line 78, C:/LaravelProjects/scheduler/public/css/profile.scss */
 #myIcon {
   font-size: 200px;
-  padding: 20px; }
+  padding: 20px;
+  color: #636b6f; }
+
+/* line 84, C:/LaravelProjects/scheduler/public/css/profile.scss */
+#myIcon:hover {
+  background-color: #eee; }
 
 /*# sourceMappingURL=profile.css.map */

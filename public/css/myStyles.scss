@@ -37,10 +37,6 @@ a.active{
 	padding-top: 1.5rem;
 }
 
-.main-tables {
-	margin-top: 7px;
-}
-
 .main-tables th,
 .main-tables td {
 	text-align: center;
@@ -57,11 +53,6 @@ a.active{
 .rose {
 	background-color: $rose;
 	opacity: 0.3;
-}
-
-.names-container {
-	padding-top: 0.5rem;
-	padding-bottom: 2rem;
 }
 
 .names {
@@ -189,13 +180,10 @@ a.active{
 	padding-top: 30px;
 }
 
-#btn-new-schedule {
-	
-}
-
 #btn-send-date {
 	padding: 5px 15px;
 	margin: 0;
+	margin-top: 10px;
 	display: none;
 }
 
@@ -204,7 +192,6 @@ a.active{
 }
 
 #all-users-dropdown-btn {
-	margin-bottom: 10px;
 	display: none;
 }
 

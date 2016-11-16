@@ -21,7 +21,9 @@ class ChatController extends Controller {
 	public function store () {
 		
 		$currentUser = request('currentUser');
+		$currentUserId = request('currentUserId');
 		$chatWith = request('chatWith');
+		$chatWithId = App\User::where('name', '=', $chatWith)->first()->id;
 		$reply = request('reply');
 	
 		// get users in alphabetical order (case insensitive)
@@ -32,7 +34,7 @@ class ChatController extends Controller {
 		
 		$pusher = App::make('pusher');
 
-		$pusher->trigger('privat-' . $chatWith, 
+		$pusher->trigger('privat-' . $chatWithId, 
 					 'new-reply', 
 					 ['reply' => $reply, 'author' => $currentUser]);
 		

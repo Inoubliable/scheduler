@@ -1,6 +1,8 @@
 $(document).ready(function () {
 
 	var currentUser = $('.username').text();
+	var currentUserId = $('.username').attr('id');
+	console.log(currentUserId);
 	var currentChatters = [];
 
 	// open chat with clicked user
@@ -46,11 +48,12 @@ $(document).ready(function () {
 				var reply = thisForm.find('.myReply').val();
 				thisForm.parent().siblings('.replies').append('<li class="list-group-item"><b>' + currentUser + ':</b> ' + reply + '</li>');
 				thisForm.parent().siblings('.replies').scrollTop(thisForm.parent().siblings('.replies')[0].scrollHeight);
-				var chatWith = thisForm.parent().siblings('.chat-header').text();
+				var chatWith = thisForm.parent().siblings('.chat-header').text().slice(0, -1); // get username without x
 
 				// Build POST data and make AJAX request
 				var data = {
 					currentUser: currentUser,
+					currentUserId: currentUserId,
 					chatWith: chatWith,
 					reply: reply
 				};
@@ -71,7 +74,7 @@ $(document).ready(function () {
 	var pusher = new Pusher("b070815da8de3077aa89", {
 		cluster: 'eu'
 	});
-	var channel = pusher.subscribe('privat-' + currentUser);
+	var channel = pusher.subscribe('privat-' + currentUserId);
 	channel.bind('new-reply', function (data) {
 
 		$('.replies').append('<li class="list-group-item"><b>' + data.author + ':</b> ' + data.reply + '</li>');

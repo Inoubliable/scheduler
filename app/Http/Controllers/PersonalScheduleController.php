@@ -38,7 +38,7 @@ class PersonalScheduleController extends Controller
 		}
 		
 		// get users who have already given their personal schedules
-		$user_ids = App\PersonalSchedule::where([['schedule_id', '=', $schedule_id], ['created_at', '!=', 'updated_at']])->get(['user_id']);
+		$user_ids = App\PersonalSchedule::whereRaw('schedule_id = ' . $schedule_id . ' AND created_at != updated_at')->get(['user_id']);
 		$users = [];
 		foreach ($user_ids as $user_id) {
 			$users[] = App\User::where('id', '=', $user_id->user_id)->get(['name', 'image'])->first();

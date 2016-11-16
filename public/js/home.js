@@ -14,7 +14,7 @@ $(document).ready(function() {
 		for (var i = 0; i < allUsers.length; i++) {
 			
 			if(allUsers[i].className.includes("list-group-item-success")){
-				chosen.push(allUsers[i].innerText);
+				chosen.push($.trim(allUsers[i].innerText));
 			}
 		}
 		
@@ -170,18 +170,19 @@ $(document).ready(function() {
 		
 		startDate = year + "-" + month + "-" + day;
 		
-		console.log(startDate);
-		
 		$(this).hide();
 		$("#datepicker").hide();
 		$("#all-users-dropdown-btn").hide();
 		
 		var users = usersToArray();
 		
+		console.log({ startDate: startDate, creator: currentUser, users: users });
+		
 		$.post( "/home", { startDate: startDate, creator: currentUser, users: users } )
-			.done(function(data) {			
-				$("#btn-send-date").hide();
-				$("#all-users-dropdown-btn").hide();
+			.done(function(schedules) {
+			
+				location.reload(); // for now reload page, no ajax
+			
 			});
 		
 	});
