@@ -12,10 +12,11 @@
 	<title>{{ config('app.name') }}</title>
 
 	<!-- Font Awesome -->
-	<link rel="stylesheet" href="/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/myStyles.css">
 
 	<!-- Scripts -->
 	<script>
@@ -24,7 +25,7 @@
         ]); ?>
 	</script>
 	
-	@yield('header')
+	<link rel="stylesheet" href="cropper/dist/cropper.css">
 	
 </head>
 
@@ -48,13 +49,13 @@
 							@if ( !Auth::user()->image )
 								<i class='fa fa-user-secret'></i>
 							@else
-								<img class="user-img" src='images/{{ Auth::user()->image }}' alt="profile picture">
+								<div class="user-img-preview"></div>
 							@endif
 						</div>
 						<div class="username float-xs-left">{{ Auth::user()->name }}</div>
 					</button>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdownBtn">
-						<a class="dropdown-item" href="/myProfile">Profile</a>
+						<a class="dropdown-item" href="/profile">Profile</a>
 						<a class="dropdown-item" href="#">Settings</a>
 						<div class="dropdown-divider"></div>
 						<a href="{{ url('/logout') }}" class="dropdown-item" onclick="event.preventDefault();
@@ -70,7 +71,32 @@
 			</div>
 		</nav>
 
-		@yield('content')
+		<div class="container-fluid">
+			<form id="profilePictureForm" action="/profileImage" method="post" enctype="multipart/form-data">
+				{{ csrf_field() }}
+				<label for="profilePictureTemp">Choose an image</label>
+				<input type="file" name="profilePictureTemp" id="profilePictureTemp">
+				<input type="submit" value="Submit" name="submit" class="btn btn-success btn-sm">
+			</form>
+
+			<div class="text-xs-center">
+
+				@if(file_exists('images/' . Auth::user()->name . 'Temp.jpg'))
+
+				<img id="image" src='images/{{ Auth::user()->name }}Temp.jpg'></img>
+				<div class="btn-crop-area text-xs-center">					
+					<button id="btn-crop" class="btn btn-primary">Crop</button>
+					<div class="alert alert-success crop-alert" role="alert">
+						<i class="fa fa-check"></i> Successfully cropped!
+					</div>
+				</div>
+
+				@else
+					You don't have any images yet.
+				@endif
+
+			</div>
+		</div>
 		
 	</div>
 
@@ -79,7 +105,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
 	
-	@yield('scripts')
+	<script src="cropper/dist/cropper.js"></script>
+	<script src="js/profileImage.js"></script>
 	
 </body>
 

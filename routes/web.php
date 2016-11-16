@@ -23,8 +23,11 @@ Route::post('/personalSchedules', 'PersonalScheduleController@update'); //should
 Route::get('/chat', 'ChatController@index');
 Route::post('/chat', 'ChatController@store');
 Route::get('/chatHistory', 'ChatHistoryController@index');
-Route::get('/profile', 'ProfileController@index');
-Route::post('/profile', 'ProfileController@store');
+Route::get('/profileImage', 'ProfileImageController@index');
+Route::post('/profileImage', 'ProfileImageController@store');
+Route::get('/myProfile', 'MyProfileController@index');
+Route::get('/profile/{id}', 'ProfilesController@index');
+Route::post('/addFriend', 'ProfilesController@store');
 
 
 // route for testing

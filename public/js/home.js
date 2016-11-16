@@ -2,6 +2,7 @@ $(document).ready(function() {
 	
 	var day;
 	var month;
+	var year;
 	var startDate;
 	
 	var currentUser = $(".username").text();
@@ -147,23 +148,33 @@ $(document).ready(function() {
 		$(this).toggleClass("list-group-item-success");
 	});
 	
-	$("#btn-set-date").click(function() {
-		
-		day = $("#day").val();
-		month = $("#month").val();
-		var d = new Date();
-		var year = d.getFullYear();
-		startDate = year + "-" + month + "-" + day;
+	$("#btn-new-schedule").click(function() {
 		
 		$(this).hide();
-		$("#day").hide();
-		$("#month").hide();
+		$("#datepicker").show();
 		$("#all-users-dropdown-btn").show();
 		$("#btn-send-date").show();
+	
+		$("#datepicker").datepicker();
+		$("#datepicker").datepicker( "option", "dateFormat", "d'.'mm'.'yy" );
 		
 	});
 	
 	$("#btn-send-date").click(function() {
+		
+		var date = $("#datepicker").val();
+		var parsedDate = $.datepicker.parseDate( "d'.'mm'.'yy", date );
+		day = parsedDate.getDate();
+		month = parsedDate.getMonth() + 1;
+		year = parsedDate.getFullYear();
+		
+		startDate = year + "-" + month + "-" + day;
+		
+		console.log(startDate);
+		
+		$(this).hide();
+		$("#datepicker").hide();
+		$("#all-users-dropdown-btn").hide();
 		
 		var users = usersToArray();
 		

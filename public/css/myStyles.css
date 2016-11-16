@@ -172,46 +172,48 @@ a.active {
   opacity: 0; }
 
 /* line 180, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
-#day, #month {
-  padding: 3px 5px;
+#datepicker {
+  padding: 3px 7px;
   border: 1px solid #aaa;
   border-radius: 3px;
-  width: 70px;
-  vertical-align: middle; }
-
-/* line 188, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
-#btn-set-date, #btn-send-date {
-  padding: 5px 15px;
-  margin: 0; }
-
-/* line 193, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
-#btn-send-date {
+  margin-bottom: 10px;
   display: none; }
 
-/* line 198, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 188, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+#left-section {
+  padding-top: 30px; }
+
+/* line 196, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+#btn-send-date {
+  padding: 5px 15px;
+  margin: 0;
+  display: none; }
+
+/* line 202, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #all-users-dropdown {
   display: inline-block; }
 
-/* line 202, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 206, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #all-users-dropdown-btn {
+  margin-bottom: 10px;
   display: none; }
 
-/* line 206, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 211, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .all-users-list {
   width: 250px;
   max-height: 300px;
   overflow: auto; }
 
-/* line 212, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 217, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .all-users-list li:hover {
   cursor: pointer; }
 
-/* line 216, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 221, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .all-users-list img {
   height: 2.8rem;
   margin-right: 1rem; }
 
-/* line 221, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 226, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .all-users-list .fa {
   font-size: 2.8rem;
   margin-right: 1rem;
@@ -220,12 +222,12 @@ a.active {
   text-align: center;
   vertical-align: middle; }
 
-/* line 230, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 235, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .confirm {
   margin-bottom: 10px; }
 
 /************** CHAT PART *****************/
-/* line 236, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 241, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #all-chats {
   position: fixed;
   display: flex;
@@ -238,16 +240,16 @@ a.active {
   padding: 10px;
   padding-bottom: 0; }
 
-/* line 249, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 254, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .chat-container {
   position: relative;
   margin-left: 20px;
-  width: 300px;
+  min-width: 300px;
   height: 100%;
   background-color: #ddd;
   padding: 60px 20px; }
 
-/* line 258, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 263, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .chat-header {
   position: absolute;
   top: 0;
@@ -264,49 +266,55 @@ a.active {
   padding-left: 20px;
   padding-right: 15px; }
 
-/* line 275, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 280, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .close-chat {
   margin-left: auto;
   font-size: 25px; }
 
-/* line 280, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 285, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .close-chat:hover {
   cursor: pointer; }
 
-/* line 284, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 289, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .chat-form-container {
   position: absolute;
   bottom: 0;
   left: 0;
   margin: 10px; }
 
-/* line 291, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 296, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .replies {
   max-height: 100%;
   overflow-y: auto;
   overflow-x: hidden; }
 
-/* line 297, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 302, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .no-messages {
   position: absolute; }
 
-/* line 301, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 306, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #users-chat-container {
   position: absolute;
+  bottom: 0;
   right: 10px;
-  width: 230px;
-  margin-top: 15px; }
+  margin-bottom: 0;
+  width: 260px; }
 
-/* line 308, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 314, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+#users-list {
+  max-height: 500px;
+  overflow-y: auto; }
+
+/* line 319, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #users-list li:hover {
   cursor: pointer; }
 
-/* line 312, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 323, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #users-list img {
   height: 2.8rem;
   margin-right: 1rem; }
 
-/* line 317, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 328, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #users-list .fa {
   font-size: 2.8rem;
   margin-right: 1rem;

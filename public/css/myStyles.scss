@@ -177,21 +177,25 @@ a.active{
 	opacity: 0;
 }
 
-#day, #month {
-	padding: 3px 5px;
+#datepicker {
+	padding: 3px 7px;
 	border: 1px solid #aaa;
 	border-radius: 3px;
-	width: 70px;
-	vertical-align: middle;
+	margin-bottom: 10px;
+	display: none;
 }
 
-#btn-set-date {
-	padding: 5px 15px;
-	margin: 0;
+#left-section {
+	padding-top: 30px;
+}
+
+#btn-new-schedule {
+	
 }
 
 #btn-send-date {
-	@extend #btn-set-date;
+	padding: 5px 15px;
+	margin: 0;
 	display: none;
 }
 
@@ -200,6 +204,7 @@ a.active{
 }
 
 #all-users-dropdown-btn {
+	margin-bottom: 10px;
 	display: none;
 }
 
@@ -249,7 +254,7 @@ a.active{
 .chat-container {
 	position: relative;
 	margin-left: 20px;
-	width: 300px;
+	min-width: 300px;
 	height: 100%;
 	background-color: #ddd;
 	padding: 60px 20px;
@@ -300,9 +305,15 @@ a.active{
 
 #users-chat-container {
 	position: absolute;
+	bottom: 0;
 	right: 10px;
-	width: 230px;
-	margin-top: 15px;
+	margin-bottom: 0;
+	width: 260px;
+}
+
+#users-list {
+	max-height: 500px;
+	overflow-y: auto;
 }
 
 #users-list li:hover {

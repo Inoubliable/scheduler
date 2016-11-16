@@ -1,4 +1,10 @@
-@extends('layouts.app')	
+@extends('layouts.app')
+
+@section('header')
+
+<link rel="stylesheet" href="/css/myStyles.css">
+	
+@endsection	
 
 @section('content')
 		
@@ -20,10 +26,6 @@
 				@endforeach
 			</ul>
 		</div>
-		
-		
-		
-	</div>
 	
 @endsection
 

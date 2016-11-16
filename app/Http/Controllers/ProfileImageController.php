@@ -9,12 +9,12 @@ use App\Http\Requests;
 use Auth;
 use App;
 
-class ProfileController extends Controller
+class ProfileImageController extends Controller
 {
     
 	public function index () {
 		
-		return view('profile');
+		return view('profileImage');
 		
 	}
     
