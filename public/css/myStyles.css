@@ -29,10 +29,45 @@ a.active {
   align-items: center; }
 
 /* line 36, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+.navbar-brand {
+  font-size: 1.3rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); }
+
+/* line 43, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+.user {
+  display: flex;
+  align-items: center; }
+
+/* line 48, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+.user-img-container .fa {
+  font-size: 28px;
+  margin-bottom: 0;
+  padding-top: 2px; }
+
+/* line 54, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+.user-img, .user-img-preview {
+  width: 38px;
+  height: 38px;
+  border-radius: 2px; }
+
+/* line 60, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+.user-img-preview {
+  overflow: hidden; }
+
+/* line 65, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+.username {
+  margin: 0;
+  margin-left: 8px;
+  margin-right: 8px;
+  font-size: 1.1rem; }
+
+/* line 72, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .container {
   padding-top: 1.5rem; }
 
-/* line 41, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 77, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .main-tables th,
 .main-tables td {
   text-align: center;
@@ -40,55 +75,20 @@ a.active {
   padding-top: 7px !important;
   padding-bottom: 7px !important; }
 
-/* line 48, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 84, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .red {
   background-color: #CF000F !important;
   opacity: 1 !important; }
 
-/* line 53, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 89, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .rose {
   background-color: #E74C3C;
   opacity: 0.3; }
 
-/* line 58, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 94, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .names {
   font-weight: 400;
   font-size: 1rem; }
-
-/* line 63, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
-.navbar-brand {
-  font-size: 1.3rem;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%); }
-
-/* line 70, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
-.user {
-  display: flex;
-  align-items: center; }
-
-/* line 75, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
-.user-img-container .fa {
-  font-size: 28px;
-  margin-bottom: 0;
-  padding-top: 2px; }
-
-/* line 81, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
-.user-img, .user-img-preview {
-  width: 38px;
-  height: 38px;
-  border-radius: 2px; }
-
-/* line 87, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
-.user-img-preview {
-  overflow: hidden; }
-
-/* line 92, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
-.username {
-  margin: 0;
-  margin-left: 8px;
-  margin-right: 8px;
-  font-size: 1.1rem; }
 
 /* line 99, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .dropzone {

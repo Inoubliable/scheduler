@@ -33,33 +33,6 @@ a.active{
 	align-items: center;
 }
 
-.container {
-	padding-top: 1.5rem;
-}
-
-.main-tables th,
-.main-tables td {
-	text-align: center;
-	width: 16.67%;
-	padding-top: 7px !important;
-	padding-bottom: 7px !important;
-}
-
-.red {
-	background-color: $redish !important;
-	opacity: 1 !important;
-}
-
-.rose {
-	background-color: $rose;
-	opacity: 0.3;
-}
-
-.names {
-	font-weight: 400;
-	font-size: 1rem;
-}
-
 .navbar-brand {
 	font-size: 1.3rem;
 	position: absolute;
@@ -94,6 +67,33 @@ a.active{
 	margin-left: 8px;
 	margin-right: 8px;
 	font-size: 1.1rem;
+}
+
+.container {
+	padding-top: 1.5rem;
+}
+
+.main-tables th,
+.main-tables td {
+	text-align: center;
+	width: 16.67%;
+	padding-top: 7px !important;
+	padding-bottom: 7px !important;
+}
+
+.red {
+	background-color: $redish !important;
+	opacity: 1 !important;
+}
+
+.rose {
+	background-color: $rose;
+	opacity: 0.3;
+}
+
+.names {
+	font-weight: 400;
+	font-size: 1rem;
 }
 
 .dropzone {

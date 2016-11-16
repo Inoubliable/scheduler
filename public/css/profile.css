@@ -53,30 +53,42 @@ a.active {
   font-size: 1.1rem; }
 
 /* line 60, C:/LaravelProjects/scheduler/public/css/profile.scss */
+.navbar-brand {
+  font-size: 1.3rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); }
+
+/* line 67, C:/LaravelProjects/scheduler/public/css/profile.scss */
 #left-section {
   margin-top: 20px; }
 
-/* line 64, C:/LaravelProjects/scheduler/public/css/profile.scss */
+/* line 71, C:/LaravelProjects/scheduler/public/css/profile.scss */
 #main-section {
   margin-top: 20px; }
 
-/* line 68, C:/LaravelProjects/scheduler/public/css/profile.scss */
+/* line 75, C:/LaravelProjects/scheduler/public/css/profile.scss */
 #left-section .fa {
   font-size: 120px;
   margin-bottom: 15px; }
 
-/* line 73, C:/LaravelProjects/scheduler/public/css/profile.scss */
+/* line 80, C:/LaravelProjects/scheduler/public/css/profile.scss */
 #myImage {
   width: 200px;
   padding: 20px; }
 
-/* line 78, C:/LaravelProjects/scheduler/public/css/profile.scss */
+/* line 85, C:/LaravelProjects/scheduler/public/css/profile.scss */
+#profileImage {
+  width: 250px;
+  padding: 20px; }
+
+/* line 90, C:/LaravelProjects/scheduler/public/css/profile.scss */
 #myIcon {
   font-size: 200px;
   padding: 20px;
   color: #636b6f; }
 
-/* line 84, C:/LaravelProjects/scheduler/public/css/profile.scss */
+/* line 96, C:/LaravelProjects/scheduler/public/css/profile.scss */
 #myIcon:hover {
   background-color: #eee; }
 

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App;
+use Auth;
 use DB;
 
 class ProfilesController extends Controller
@@ -14,9 +15,9 @@ class ProfilesController extends Controller
     
 	public function index ($id) {
 		
-		$username = 'Tim';
+		$username = Auth::user()->name;
 		
-		$user_id = App\User::where('name', '=', $username)->first()->id;
+		$user_id = Auth::user()->id;
 		
 		$friends = [$user_id, $id];
 		

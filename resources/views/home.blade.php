@@ -26,7 +26,7 @@
 							@foreach ($friends as $friend)
 								<li class='list-group-item'>
 									@if ($friend->image)
-										<img src='images/{{ $user->image }}'>{{ $friend->name }}
+										<img src='images/{{ $friend->image }}'>{{ $friend->name }}
 									@else
 										<i class='fa fa-user-secret'></i>{{ $friend->name }}
 									@endif

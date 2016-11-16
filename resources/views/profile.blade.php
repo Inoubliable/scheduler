@@ -11,9 +11,9 @@
 <div class="container-fluid">
 	<div class="row">
 	
-		<section id="left-section" class="col-md-2 text-xs-center">
+		<section id="left-section" class="col-md-3 text-xs-center">
 			@if ( $user->image )
-				<img src='images/{{ $user->image }}'>
+				<img src='/images/{{ $user->image }}' id='profileImage'>
 			@else
 				<i class='fa fa-user-secret'></i>
 			@endif
@@ -22,7 +22,7 @@
 			<h4>{{ $user->name }}</h4>
 		</section>
 		
-		<section id="main-section" class="col-md-10 text-xs-center">
+		<section id="main-section" class="col-md-9 text-xs-center">
 			@if($areFriends)
 				<button class="btn btn-success"><i class='fa fa-check'></i> Friend</button>
 			@else
