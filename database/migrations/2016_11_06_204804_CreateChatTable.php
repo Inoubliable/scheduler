@@ -17,6 +17,8 @@ class CreateChatTable extends Migration
             $table->increments('id');
             $table->string('user_one');
             $table->string('user_two');
+            $table->boolean('user_one_seen');
+            $table->boolean('user_two_seen');
             $table->timestamps();
         });
     }

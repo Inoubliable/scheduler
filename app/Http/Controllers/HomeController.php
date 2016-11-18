@@ -32,7 +32,23 @@ class HomeController extends Controller
 			$date = DateTime::createFromFormat("Y-m-d", $dateString);
 			$schedule->day = $date->format("d");
 			$schedule->month = $date->format("m");
+		
+			// get users who have already given their personal schedules
+			$user_ids = App\PersonalSchedule::whereRaw('schedule_id = ' . $schedule->schedule_id . ' AND created_at != updated_at')->get(['user_id']);
+			$usersDone = [];
+			foreach ($user_ids as $user_id) {
+				$usersDone[] = App\User::where('id', '=', $user_id->user_id)->get(['name', 'image'])->first();
+			}
+		
+			// get users who have not given their personal schedules yet
+			$user_ids = App\PersonalSchedule::whereRaw('schedule_id = ' . $schedule->schedule_id . ' AND created_at = updated_at')->get(['user_id']);
+			$usersUndone = [];
+			foreach ($user_ids as $user_id) {
+				$usersUndone[] = App\User::where('id', '=', $user_id->user_id)->get(['name', 'image'])->first();
+			}
 			
+			$schedule->usersDone = $usersDone;
+			$schedule->usersUndone = $usersUndone;
 		}
 		
 		// get friends
@@ -56,12 +72,14 @@ class HomeController extends Controller
 	}
     
 	public function store () {
-			
+		
+		$title = request('title');	
 		$startDate = request('startDate');
 		$creator = request('creator');
 		$users = request('users');
 		
 		$schedule = new App\Schedule;
+		$schedule->title = $title;
 		$schedule->creator = $creator;
 		$schedule->startDate = $startDate;
 		$schedule->save();
@@ -75,7 +93,7 @@ class HomeController extends Controller
 			$schedule->personalSchedules()->save($personal_schedule);
 		}
 		
-		// get schedules
+		// get schedules for ajax
 		$schedules = App\PersonalSchedule::where('user_id', '=', Auth::user()->id)->get();
 		
 		foreach ($schedules as $schedule) {

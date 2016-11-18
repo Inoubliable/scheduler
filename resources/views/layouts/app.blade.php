@@ -41,7 +41,14 @@
 				<a href="{{ url('/register') }}">Register</a>
 				
 				@else
-				<a href="/chat">Chat</a>
+				<div id="nav-chat">
+					<a href="/chat">Chat</a>
+					@if ( Auth::user()->unseen_chats != 0 )
+						<span id="chatTag" class="tag tag-pill tag-danger">
+							{{ Auth::user()->unseen_chats }}
+						</span>
+					@endif
+				</div>
 				<div class="dropdown">
 					<button class="btn btn-secondary dropdown-toggle" type="button" id="userDropdownBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<div class="user-img-container float-xs-left">

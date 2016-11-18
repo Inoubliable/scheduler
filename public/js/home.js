@@ -105,12 +105,12 @@ $(document).ready(function() {
       	mousedown = false;
     });
 	
-	// convert data 
+	// convert and post data 
 	$(".confirm").on("click", function () {
 		
 		$(this).hide();
 		
-		var scheduleId = $(this).siblings('.table').attr('id');
+		var scheduleId = $(this).siblings('.card').find('.table').attr('id');
 		var arrstring = arrayToString(scheduleId);
 		
 		$.post( "/personalSchedules", { personalSchedule: arrstring, currentUser: currentUser, scheduleId: scheduleId } )
@@ -121,14 +121,27 @@ $(document).ready(function() {
 				});
 			
 				stringToArray(data.freeTime, scheduleId, "red");
-				$.each( data.users, function (index, user) {
+			
+				$("#" + scheduleId).parents('.row').find('.names').html(''); // empty names list
+			
+				$.each( data.usersDone, function (index, user) {
 					if (user['image']) {
 						$img = "<img src='images/" + user['image'] + "'>";
 					} else {
 						$img = "<i class='fa fa-user-secret'></i>";
 					}
-					$("#" + scheduleId).parent().siblings('.names-container').find('.names').append("<li class='list-group-item list-group-item-action'>" + $img + user['name'] + "</li>");
+					$("#" + scheduleId).parents('.row').find('.names').prepend("<li class='list-group-item list-group-item-action'>" + $img + user['name'] + "</li>");
 				});
+			
+				$.each( data.usersUndone, function (index, user) {
+					if (user['image']) {
+						$img = "<img src='images/" + user['image'] + "'>";
+					} else {
+						$img = "<i class='fa fa-user-secret'></i>";
+					}
+					$("#" + scheduleId).parents('.row').find('.names').append("<li class='list-group-item list-group-item-action undone'>" + $img + user['name'] + "</li>");
+				});
+			
 			});
 		
 	});
@@ -151,9 +164,7 @@ $(document).ready(function() {
 	$("#btn-new-schedule").click(function() {
 		
 		$(this).hide();
-		$("#datepicker").show();
-		$("#all-users-dropdown-btn").show();
-		$("#btn-send-date").show();
+		$("#left-section .card").slideDown(200);
 	
 		$("#datepicker").datepicker();
 		$("#datepicker").datepicker( "option", "dateFormat", "d'.'mm'.'yy" );
@@ -171,14 +182,14 @@ $(document).ready(function() {
 		startDate = year + "-" + month + "-" + day;
 		
 		$(this).hide();
-		$("#datepicker").hide();
-		$("#all-users-dropdown-btn").hide();
+		$("#left-section .card").hide();
 		
 		var users = usersToArray();
+		var title = $("#title-input").val();
 		
-		console.log({ startDate: startDate, creator: currentUser, users: users });
+		console.log({ title: title, startDate: startDate, creator: currentUser, users: users });
 		
-		$.post( "/home", { startDate: startDate, creator: currentUser, users: users } )
+		$.post( "/home", { title: title, startDate: startDate, creator: currentUser, users: users } )
 			.done(function(schedules) {
 			
 				location.reload(); // for now reload page, no ajax

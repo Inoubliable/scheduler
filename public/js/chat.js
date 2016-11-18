@@ -2,7 +2,6 @@ $(document).ready(function () {
 
 	var currentUser = $('.username').text();
 	var currentUserId = $('.username').attr('id');
-	console.log(currentUserId);
 	var currentChatters = [];
 
 	// open chat with clicked user
@@ -15,6 +14,31 @@ $(document).ready(function () {
 			currentChatters.push(chatWith);
 
 			$('#all-chats').append('<div class="chat-container text-xs-center"><div class="chat-header">' + chatWith + '<span class="close-chat float-xs-right">&times;</span></div><ul class="replies list-group text-xs-left"></ul><div class="chat-form-container"><form action="/chat" method="post" class="chat-form"><div class="input-group"><input type="text" class="myReply form-control" placeholder="Your message..."><span class="input-group-btn"><button class="btn btn-success" type="submit">Send</button></span></div></form></div></div>');
+			
+			$('.myReply').last().focus(function() {
+				
+				var data = { chatWith: chatWith };
+				
+				$.get('/chatFocus', data, function(data) {
+					
+					if(data.unseenChats != 0) {
+						
+						$html = '<a href="/chat">Chat</a>' +					
+								'<span id="chatTag" class="tag tag-pill tag-danger">' +
+									data.unseenChats +
+								'</span>';
+						
+					} else {
+						$html = '<a href="/chat">Chat</a>';
+					}
+					
+					$('#nav-chat').html( $html );
+					
+				});
+				
+			});
+			
+			$('.myReply').last().focus();
 			
 			$('.close-chat').last().click(function() {
 				var name = $(this).parents('.chat-header').text().slice(0, -1); // get corresponding name without x

@@ -28,6 +28,7 @@ Route::post('/profileImage', 'ProfileImageController@store');
 Route::get('/myProfile', 'MyProfileController@index');
 Route::get('/profile/{id}', 'ProfilesController@index');
 Route::post('/addFriend', 'ProfilesController@store');
+Route::get('/chatFocus', 'ChatFocusController@index');
 
 
 // route for testing

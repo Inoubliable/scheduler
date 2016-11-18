@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('image')->nullable();
+            $table->integer('unseen_chats')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

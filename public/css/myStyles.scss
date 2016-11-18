@@ -17,8 +17,15 @@ a.active{
 	text-decoration: none;
 }
 
+.navbar-brand {
+	font-size: 1.3rem;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
 .user a {
-	color: #636b6f;
+    color: #636b6f;
     padding: 10px 25px;
     font-size: 12px;
     font-weight: 600;
@@ -27,17 +34,25 @@ a.active{
     text-transform: uppercase;
 }
 
+#chatTag {
+	position: absolute;
+	right: 18px;
+	top: 4px;
+}
+
+#nav-chat {
+	position: relative;
+    padding: 10px 30px;
+}
+
+#nav-chat a {
+    padding: 0;
+}
+
 #userDropdownBtn {
 	padding: 5px 14px;
 	display: flex;
 	align-items: center;
-}
-
-.navbar-brand {
-	font-size: 1.3rem;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
 }
 
 .user {
@@ -114,6 +129,10 @@ a.active{
 	vertical-align: middle;
 }
 
+.names .undone {
+	opacity: 0.6;
+}
+
 .names .list-group-item {
 	font-size: 18px;
 	text-align: left;
@@ -168,31 +187,32 @@ a.active{
 	opacity: 0;
 }
 
+#left-section .card {
+	display: none;
+}
+
+#title-input {
+	padding: 3px 7px;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	margin-bottom: 10px;
+}
+
 #datepicker {
 	padding: 3px 7px;
 	border: 1px solid #aaa;
 	border-radius: 3px;
 	margin-bottom: 10px;
-	display: none;
-}
-
-#left-section {
-	padding-top: 30px;
 }
 
 #btn-send-date {
 	padding: 5px 15px;
 	margin: 0;
 	margin-top: 10px;
-	display: none;
 }
 
 #all-users-dropdown {
 	display: inline-block;
-}
-
-#all-users-dropdown-btn {
-	display: none;
 }
 
 .all-users-list {
