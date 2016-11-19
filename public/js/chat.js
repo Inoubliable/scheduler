@@ -49,7 +49,6 @@ $(document).ready(function () {
 
 			// get chat history
 			var users = {
-				currentUser: currentUser,
 				chatWith: chatWith
 			};
 			$.get('/chatHistory', users).done(function (data) {
@@ -62,6 +61,7 @@ $(document).ready(function () {
 						$('.replies').last().scrollTop($('.replies').last()[0].scrollHeight);
 					});
 				}
+				
 			});
 
 			$('.chat-form').last().submit(function (e) {

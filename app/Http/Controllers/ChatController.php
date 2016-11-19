@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 use DB;
 
 class ChatController extends Controller {

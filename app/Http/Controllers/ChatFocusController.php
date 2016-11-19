@@ -25,8 +25,14 @@ class ChatFocusController extends Controller
 		sort($users, SORT_NATURAL | SORT_FLAG_CASE);
 		$user_one = $users[0];
 		$user_two = $users[1];
+		
+		if($user_one == $currentUser) {
+			DB::table('chat')->whereRaw('user_one="' . $user_one . '" AND user_two="' . $user_two . '"')->update(['user_one_seen'=>true]);
+		} else {
+			DB::table('chat')->whereRaw('user_one="' . $user_one . '" AND user_two="' . $user_two . '"')->update(['user_two_seen'=>true]);		
+		}
 			
-		DB::table('chat')->update(['user_one'=>$user_one, 'user_two'=>$user_two, 'user_one_seen'=>true, 'user_two_seen'=>true]);
+		
 		
 		// count unseen chats and save the number in users table
 		$unseenChats1 = DB::table('chat')->whereRaw("(user_one = '" . $chatWith . "' AND user_one_seen = 0) OR (user_two = '" . $chatWith . "' AND user_two_seen = 0)")->count();

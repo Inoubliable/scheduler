@@ -15,7 +15,7 @@ class ChatHistoryController extends Controller
     
 	public function index () {
 		
-		$currentUser = request('currentUser');
+		$currentUser = Auth::user()->name;
 		$chatWith = request('chatWith');
 	
 		// get users in alphabetical order (case insensitive)
