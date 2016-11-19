@@ -63,7 +63,7 @@
 					</button>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdownBtn">
 						<a class="dropdown-item" href="/myProfile">Profile</a>
-						<a class="dropdown-item" href="#">Settings</a>
+						<a class="dropdown-item" href="/settings">Settings</a>
 						<div class="dropdown-divider"></div>
 						<a href="{{ url('/logout') }}" class="dropdown-item" onclick="event.preventDefault();
 																			 document.getElementById('logout-form').submit();">

@@ -31,6 +31,18 @@ a.active{
 #search-list {
 	position: absolute;
 	top: 100%;
+	max-height: 400px;
+	overflow-y: auto;
+	z-index: 3;
+}
+
+#search-list a {
+	font-size: 14px;
+}
+
+#search-list small {
+    text-transform: none;
+	font-size: 12px;
 }
 
 .user a {

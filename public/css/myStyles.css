@@ -38,71 +38,72 @@ a.active {
   position: absolute;
   top: 100%;
   max-height: 400px;
-  overflow-y: auto; }
+  overflow-y: auto;
+  z-index: 3; }
 
-/* line 48, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 49, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #search-list a {
   font-size: 14px; }
 
-/* line 52, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 53, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #search-list small {
   text-transform: none;
   font-size: 12px; }
 
-/* line 57, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 58, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #chatTag {
   position: absolute;
   right: 18px;
   top: 4px; }
 
-/* line 63, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 64, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #nav-chat {
   position: relative;
   padding: 10px 30px; }
 
-/* line 68, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 69, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #nav-chat a {
   padding: 0; }
 
-/* line 72, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 73, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #userDropdownBtn {
   padding: 5px 14px;
   display: flex;
   align-items: center; }
 
-/* line 78, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 79, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .user {
   display: flex;
   align-items: center; }
 
-/* line 83, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 84, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .user-img-container .fa {
   font-size: 28px;
   margin-bottom: 0;
   padding-top: 2px; }
 
-/* line 89, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 90, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .user-img, .user-img-preview {
   width: 38px;
   height: 38px;
   border-radius: 2px; }
 
-/* line 95, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 96, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .user-img-preview {
   overflow: hidden; }
 
-/* line 100, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 101, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .username {
   margin: 0;
   margin-left: 8px;
   margin-right: 8px;
   font-size: 1.1rem; }
 
-/* line 107, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 108, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .container {
   padding-top: 1.5rem; }
 
-/* line 112, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 113, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .main-tables th,
 .main-tables td {
   text-align: center;
@@ -110,31 +111,31 @@ a.active {
   padding-top: 7px !important;
   padding-bottom: 7px !important; }
 
-/* line 119, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 120, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .red {
   background-color: #CF000F !important;
   opacity: 1 !important; }
 
-/* line 124, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 125, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .rose {
   background-color: #E74C3C;
   opacity: 0.3; }
 
-/* line 129, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 130, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .names {
   font-weight: 400;
   font-size: 1rem; }
 
-/* line 134, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 135, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .dropzone {
   margin-top: 2.5rem; }
 
-/* line 138, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 139, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .names img {
   height: 2.8rem;
   margin-right: 1rem; }
 
-/* line 143, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 144, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .names .fa {
   font-size: 2.8rem;
   margin-right: 1rem;
@@ -143,57 +144,57 @@ a.active {
   text-align: center;
   vertical-align: middle; }
 
-/* line 152, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 153, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .names .undone {
   opacity: 0.6; }
 
-/* line 156, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 157, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .names .list-group-item {
   font-size: 18px;
   text-align: left; }
 
-/* line 161, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 162, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #profilePictureForm {
   text-align: center;
   margin: 20px 0px; }
 
-/* line 166, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 167, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #profilePictureForm label {
   text-align: right;
   padding: 10px; }
 
-/* line 171, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 172, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #profilePictureForm label:hover {
   text-align: right;
   cursor: pointer; }
 
-/* line 176, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 177, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #profilePictureTemp {
   display: none; }
 
-/* line 180, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 181, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #image {
   max-width: 100%;
   max-height: 100%;
   height: 350px; }
 
-/* line 186, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 187, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .cropper-container {
   width: 100% !important; }
 
-/* line 190, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 191, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .btn-crop-area {
   margin-top: 20px; }
 
-/* line 194, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 195, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #btn-crop {
   display: inline-block; }
 
-/* line 198, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 199, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .dates {
   font-weight: 100; }
 
-/* line 202, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 203, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .crop-alert {
   display: inline-block;
   position: absolute;
@@ -201,50 +202,50 @@ a.active {
   padding: 7px 10px;
   opacity: 0; }
 
-/* line 210, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 211, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #left-section .card {
   display: none; }
 
-/* line 214, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 215, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #title-input {
   padding: 3px 7px;
   border: 1px solid #aaa;
   border-radius: 3px;
   margin-bottom: 10px; }
 
-/* line 221, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 222, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #datepicker {
   padding: 3px 7px;
   border: 1px solid #aaa;
   border-radius: 3px;
   margin-bottom: 10px; }
 
-/* line 228, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 229, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #btn-send-date {
   padding: 5px 15px;
   margin: 0;
   margin-top: 10px; }
 
-/* line 234, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 235, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #all-users-dropdown {
   display: inline-block; }
 
-/* line 238, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 239, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .all-users-list {
   width: 250px;
   max-height: 300px;
   overflow: auto; }
 
-/* line 244, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 245, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .all-users-list li:hover {
   cursor: pointer; }
 
-/* line 248, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 249, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .all-users-list img {
   height: 2.8rem;
   margin-right: 1rem; }
 
-/* line 253, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 254, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .all-users-list .fa {
   font-size: 2.8rem;
   margin-right: 1rem;
@@ -253,12 +254,12 @@ a.active {
   text-align: center;
   vertical-align: middle; }
 
-/* line 262, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 263, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .confirm {
   margin-bottom: 10px; }
 
 /************** CHAT PART *****************/
-/* line 268, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 269, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #all-chats {
   position: fixed;
   display: flex;
@@ -271,16 +272,17 @@ a.active {
   padding: 10px;
   padding-bottom: 0; }
 
-/* line 281, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 282, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .chat-container {
   position: relative;
   margin-left: 20px;
   min-width: 300px;
+  max-width: 300px;
   height: 100%;
   background-color: #ddd;
   padding: 60px 20px; }
 
-/* line 290, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 292, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .chat-header {
   position: absolute;
   top: 0;
@@ -297,33 +299,33 @@ a.active {
   padding-left: 20px;
   padding-right: 15px; }
 
-/* line 307, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 309, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .close-chat {
   margin-left: auto;
   font-size: 25px; }
 
-/* line 312, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 314, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .close-chat:hover {
   cursor: pointer; }
 
-/* line 316, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 318, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .chat-form-container {
   position: absolute;
   bottom: 0;
   left: 0;
   margin: 10px; }
 
-/* line 323, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 325, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .replies {
   max-height: 100%;
   overflow-y: auto;
   overflow-x: hidden; }
 
-/* line 329, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 331, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 .no-messages {
   position: absolute; }
 
-/* line 333, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 335, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #users-chat-container {
   position: absolute;
   bottom: 0;
@@ -331,21 +333,21 @@ a.active {
   margin-bottom: 0;
   width: 260px; }
 
-/* line 341, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 343, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #users-list {
   max-height: 500px;
   overflow-y: auto; }
 
-/* line 346, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 348, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #users-list li:hover {
   cursor: pointer; }
 
-/* line 350, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 352, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #users-list img {
   height: 2.8rem;
   margin-right: 1rem; }
 
-/* line 355, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+/* line 357, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
 #users-list .fa {
   font-size: 2.8rem;
   margin-right: 1rem;
@@ -353,5 +355,17 @@ a.active {
   width: 2.8rem;
   text-align: center;
   vertical-align: middle; }
+
+/************** SETTINGS PART *****************/
+/* line 368, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+.tab-content.card {
+  border-top: none;
+  padding: 2rem; }
+
+/* line 375, C:/LaravelProjects/scheduler/public/css/myStyles.scss */
+#account-user .form-group:last-child,
+#account-password .form-group:last-child,
+#account-language .form-group:last-child {
+  margin-bottom: 0; }
 
 /*# sourceMappingURL=myStyles.css.map */

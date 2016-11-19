@@ -26,15 +26,10 @@ Route::get('/chatHistory', 'ChatHistoryController@index');
 Route::get('/profileImage', 'ProfileImageController@index');
 Route::post('/profileImage', 'ProfileImageController@store');
 Route::get('/myProfile', 'MyProfileController@index');
+Route::get('/settings', 'SettingsController@index');
 Route::get('/profile/{id}', 'ProfilesController@index');
 Route::post('/addFriend', 'ProfilesController@store');
 Route::get('/chatFocus', 'ChatFocusController@index');
 Route::get('/search', 'SearchController@index');
-
-
-// route for testing
-Route::post('/test', function() {
-	
-	return 'hehehe';
-	
-});
+Route::post('/changeEmail', 'ChangeEmailController@store');
+Route::post('/changePassword', 'ChangePasswordController@store');

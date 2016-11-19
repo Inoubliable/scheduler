@@ -183,7 +183,7 @@
 								@foreach ($schedule->usersDone as $user)
 								
 									@if ($user->image) 
-										<li class='list-group-item list-group-item-action'><img src='images/" . user['image'] . "'>{{ $user->name }}</li>
+										<li class='list-group-item list-group-item-action'><img src='images/{{ $user->image }}'>{{ $user->name }}</li>
 									@else 
 										<li class='list-group-item list-group-item-action'><i class='fa fa-user-secret'></i>{{ $user->name }}</li>
 									@endif
@@ -193,7 +193,7 @@
 								@foreach ($schedule->usersUndone as $user)
 								
 									@if ($user->image) 
-										<li class='list-group-item list-group-item-action undone'><img src='images/" . user['image'] . "'>{{ $user->name }}</li>
+										<li class='list-group-item list-group-item-action undone'><img src='images/{{ $user->image }}'>{{ $user->name }}</li>
 									@else 
 										<li class='list-group-item list-group-item-action undone'><i class='fa fa-user-secret'></i>{{ $user->name }}</li>
 									@endif

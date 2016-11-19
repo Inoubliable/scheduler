@@ -23,10 +23,12 @@
 		</section>
 		
 		<section id="main-section" class="col-md-9 text-xs-center">
-			@if($areFriends)
-				<button class="btn btn-success"><i class='fa fa-check'></i> Friend</button>
-			@else
-				<button id="add-friend" class="btn btn-primary"><i class='fa fa-user-plus'></i> Add Friend</button>
+			@if(Auth::user()->name != $user->name)
+				@if($areFriends)
+					<button class="btn btn-success"><i class='fa fa-check'></i> Friend</button>
+				@else
+					<button id="add-friend" class="btn btn-primary"><i class='fa fa-user-plus'></i> Add Friend</button>
+				@endif
 			@endif
 		</section>
 		
