@@ -27,15 +27,19 @@
 						</button>
 						<div class="dropdown-menu" aria-labelledby="all-users-dropdown-btn">
 							<ul class="all-users-list list-group">
-								@foreach ($friends as $friend)
-									<li class='list-group-item'>
-										@if ($friend->image)
-											<img src='images/{{ $friend->image }}'>{{ $friend->name }}
-										@else
-											<i class='fa fa-user-secret'></i>{{ $friend->name }}
-										@endif
-									</li>
-								@endforeach
+								@if ($friends == [])
+									<li class='list-group-item'>You don't have any friends.</li>
+								@else
+									@foreach ($friends as $friend)
+										<li class='list-group-item'>
+											@if ($friend->image)
+												<img src='images/{{ $friend->image }}'>{{ $friend->name }}
+											@else
+												<i class='fa fa-user-secret'></i>{{ $friend->name }}
+											@endif
+										</li>
+									@endforeach
+								@endif
 							</ul>
 						</div>
 					</div>

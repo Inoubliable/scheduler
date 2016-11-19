@@ -41,6 +41,8 @@
 				<a href="{{ url('/register') }}">Register</a>
 				
 				@else
+				<input type="text" id="search" class="form-control" placeholder="Search..." autocomplete="off">
+				<ul id="search-list" class="list-group"></ul>
 				<div id="nav-chat">
 					<a href="/chat">Chat</a>
 					@if ( Auth::user()->unseen_chats != 0 )
@@ -85,6 +87,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
+	<script src="/js/search.js"></script>
 	
 	@yield('scripts')
 	

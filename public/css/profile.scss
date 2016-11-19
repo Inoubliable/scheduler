@@ -17,6 +17,22 @@ a.active{
 	text-decoration: none;
 }
 
+.navbar-brand {
+	font-size: 1.3rem;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#search {
+	display: inline-block;
+}
+
+#search-list {
+	position: absolute;
+	top: 100%;
+}
+
 .user a {
 	color: #636b6f;
     padding: 10px 25px;
@@ -70,13 +86,6 @@ a.active{
 	margin-left: 8px;
 	margin-right: 8px;
 	font-size: 1.1rem;
-}
-
-.navbar-brand {
-	font-size: 1.3rem;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
 }
 
 #left-section {

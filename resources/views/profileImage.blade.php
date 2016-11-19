@@ -62,7 +62,7 @@
 						<div class="username float-xs-left">{{ Auth::user()->name }}</div>
 					</button>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdownBtn">
-						<a class="dropdown-item" href="/profile">Profile</a>
+						<a class="dropdown-item" href="/myProfile">Profile</a>
 						<a class="dropdown-item" href="#">Settings</a>
 						<div class="dropdown-divider"></div>
 						<a href="{{ url('/logout') }}" class="dropdown-item" onclick="event.preventDefault();

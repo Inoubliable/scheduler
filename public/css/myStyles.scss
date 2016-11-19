@@ -17,13 +17,6 @@ a.active{
 	text-decoration: none;
 }
 
-.navbar-brand {
-	font-size: 1.3rem;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-}
-
 .user a {
     color: #636b6f;
     padding: 10px 25px;
@@ -32,6 +25,33 @@ a.active{
     letter-spacing: 0.1rem;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+.navbar-brand {
+	font-size: 1.3rem;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#search {
+	display: inline-block;
+}
+
+#search-list {
+	position: absolute;
+	top: 100%;
+	max-height: 400px;
+	overflow-y: auto;
+}
+
+#search-list a {
+	font-size: 14px;
+}
+
+#search-list small {
+    text-transform: none;
+	font-size: 12px;
 }
 
 #chatTag {

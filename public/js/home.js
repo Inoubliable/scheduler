@@ -187,8 +187,6 @@ $(document).ready(function() {
 		var users = usersToArray();
 		var title = $("#title-input").val();
 		
-		console.log({ title: title, startDate: startDate, creator: currentUser, users: users });
-		
 		$.post( "/home", { title: title, startDate: startDate, creator: currentUser, users: users } )
 			.done(function(schedules) {
 			

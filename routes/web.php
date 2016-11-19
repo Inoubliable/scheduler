@@ -29,6 +29,7 @@ Route::get('/myProfile', 'MyProfileController@index');
 Route::get('/profile/{id}', 'ProfilesController@index');
 Route::post('/addFriend', 'ProfilesController@store');
 Route::get('/chatFocus', 'ChatFocusController@index');
+Route::get('/search', 'SearchController@index');
 
 
 // route for testing
