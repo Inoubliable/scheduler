@@ -109,6 +109,22 @@ a.active{
 	padding-top: 1.5rem;
 }
 
+.schedule-card .card-header {
+	position: relative;
+}
+
+.schedule-card .card-header h4 {
+	display: inline-block;
+	margin-bottom: 0;
+}
+
+.remove-schedule {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
 .main-tables th,
 .main-tables td {
 	text-align: center;
@@ -157,6 +173,22 @@ a.active{
 .names .list-group-item {
 	font-size: 18px;
 	text-align: left;
+}
+
+.add-name-btn-group {
+	width: 100%;
+}
+
+.add-name-btn-group button {
+	border-radius: 0 0 4px 4px !important;
+}
+
+.add-name-btn-group .dropdown-menu {
+	width: 100%;
+}
+
+.add-name:hover {
+	cursor: pointer;
 }
 
 #profilePictureForm {

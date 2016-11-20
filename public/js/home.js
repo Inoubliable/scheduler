@@ -122,7 +122,7 @@ $(document).ready(function() {
 			
 				stringToArray(data.freeTime, scheduleId, "red");
 			
-				$("#" + scheduleId).parents('.row').find('.names').html(''); // empty names list
+				$("#" + scheduleId).closest('.row').find('.names').html(''); // empty names list
 			
 				$.each( data.usersDone, function (index, user) {
 					if (user['image']) {
@@ -130,7 +130,7 @@ $(document).ready(function() {
 					} else {
 						$img = "<i class='fa fa-user-secret'></i>";
 					}
-					$("#" + scheduleId).parents('.row').find('.names').prepend("<li class='list-group-item list-group-item-action'>" + $img + user['name'] + "</li>");
+					$("#" + scheduleId).closest('.row').find('.names').prepend("<li class='list-group-item list-group-item-action'>" + $img + user['name'] + "</li>");
 				});
 			
 				$.each( data.usersUndone, function (index, user) {
@@ -139,7 +139,7 @@ $(document).ready(function() {
 					} else {
 						$img = "<i class='fa fa-user-secret'></i>";
 					}
-					$("#" + scheduleId).parents('.row').find('.names').append("<li class='list-group-item list-group-item-action undone'>" + $img + user['name'] + "</li>");
+					$("#" + scheduleId).closest('.row').find('.names').append("<li class='list-group-item list-group-item-action undone'>" + $img + user['name'] + "</li>");
 				});
 			
 			});
@@ -166,7 +166,7 @@ $(document).ready(function() {
 		$(this).hide();
 		$("#left-section .card").slideDown(200);
 	
-		$("#datepicker").datepicker();
+		$("#datepicker").datepicker({ minDate: 0, maxDate: "+6M" }); // restrict datepicker range
 		$("#datepicker").datepicker( "option", "dateFormat", "d'.'mm'.'yy" );
 		
 	});
@@ -187,12 +187,55 @@ $(document).ready(function() {
 		var users = usersToArray();
 		var title = $("#title-input").val();
 		
-		$.post( "/home", { title: title, startDate: startDate, creator: currentUser, users: users } )
+		$.post( "/home", { title: title, startDate: startDate, users: users } )
 			.done(function(schedules) {
 			
-				location.reload(); // for now reload page, no ajax
+				location.reload(); // for now just reload page
 			
 			});
+		
+	});
+	
+	$('.remove-schedule').click(function() {
+		
+		// maybe ask for confirmation
+		var removeBtn = $(this);
+		
+		var scheduleId = removeBtn.closest('.schedule-card').find('table').attr('id');
+		
+		$.post('/removeSchedule', {scheduleId: scheduleId}, function() {
+			
+			// remove schedule on client side
+			removeBtn.closest('.row').remove();
+			
+		});
+		
+	});
+	
+	$('.add-name').click(function() {
+		
+		var addName = $(this);
+		var addNameParent = addName.closest('.dropdown-menu');
+		
+		var scheduleId = addName.closest('.names-container').data('schedule-id');
+		var userId = addName.data('id');
+		
+		$.post('/scheduleUser', {scheduleId: scheduleId, userId: userId}, function(newUser) {
+			
+			if (newUser.image) {
+				$img = "<img src='images/" + newUserimage + "'>";
+			} else {
+				$img = "<i class='fa fa-user-secret'></i>";
+			}
+			addName.closest('.add-name-btn-group').siblings('.names').append("<li class='list-group-item list-group-item-action undone'>" + $img + newUser.name + "</li>");
+			
+			addName.remove();
+			
+			if ($.trim(addNameParent.text()) == '' ) {
+				addNameParent.html('<div class="dropdown-item">All friends already added.</div>');
+			}
+			
+		});
 		
 	});
 	

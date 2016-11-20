@@ -19,7 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::post('/home', 'HomeController@store');
-Route::post('/personalSchedules', 'PersonalScheduleController@update'); //should be patch
+Route::post('/personalSchedules', 'PersonalScheduleController@update'); // should be patch
+Route::post('/removeSchedule', 'ScheduleController@store'); // should be delete
+Route::post('/scheduleUser', 'ScheduleUserController@store');
 Route::get('/chat', 'ChatController@index');
 Route::post('/chat', 'ChatController@store');
 Route::get('/chatHistory', 'ChatHistoryController@index');
