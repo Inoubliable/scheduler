@@ -104,28 +104,32 @@ a.active {
   margin-top: 20px; }
 
 /* line 111, C:/LaravelProjects/scheduler/public/css/profile.scss */
-#left-section .fa {
+#left-section .fa-user-secret {
   font-size: 120px;
   margin-bottom: 15px; }
 
 /* line 116, C:/LaravelProjects/scheduler/public/css/profile.scss */
-#myImage {
-  width: 200px;
+#profileImage {
+  width: 250px;
   padding: 20px; }
 
 /* line 121, C:/LaravelProjects/scheduler/public/css/profile.scss */
-#profileImage {
-  width: 250px;
+#myImage {
+  width: 200px;
   padding: 20px; }
 
 /* line 126, C:/LaravelProjects/scheduler/public/css/profile.scss */
 #myIcon {
   font-size: 200px;
-  padding: 20px;
+  padding: 5% 0 0 5%;
   color: #636b6f; }
 
 /* line 132, C:/LaravelProjects/scheduler/public/css/profile.scss */
 #myIcon:hover {
   background-color: #eee; }
+
+/* line 136, C:/LaravelProjects/scheduler/public/css/profile.scss */
+.my-friends-list a {
+  border: none; }
 
 /*# sourceMappingURL=profile.css.map */

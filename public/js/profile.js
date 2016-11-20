@@ -8,7 +8,7 @@ $(document).ready(function() {
 		$.post('/addFriend', {currentUsername: $currentUser, friend: $friend}, function(data) {
 			
 			$('#add-friend').hide();
-			$('#main-section').append('<button class="btn btn-success"><i class="fa fa-check"></i> Friend</button>');
+			$('#left-section').append('<button class="btn btn-success"><i class="fa fa-check"></i> Friend</button>');
 			
 		});
 		

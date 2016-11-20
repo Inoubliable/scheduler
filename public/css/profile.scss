@@ -108,14 +108,9 @@ a.active{
 	margin-top: 20px;
 }
 
-#left-section .fa {
+#left-section .fa-user-secret {
 	font-size: 120px;
 	margin-bottom: 15px;
-}
-
-#myImage {
-	width: 200px;
-	padding: 20px;
 }
 
 #profileImage {
@@ -123,12 +118,21 @@ a.active{
 	padding: 20px;
 }
 
+#myImage {
+	width: 200px;
+	padding: 20px;
+}
+
 #myIcon {
 	font-size: 200px;
-	padding: 20px;
+	padding: 5% 0 0 5%;
 	color: #636b6f;
 }
 
 #myIcon:hover {
 	background-color: #eee;
+}
+
+.my-friends-list a {
+	border: none;
 }

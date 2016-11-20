@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App;
+use App\User;
 use Auth;
+use Carbon\Carbon;
 use DB;
 
 class ProfilesController extends Controller
@@ -29,9 +30,12 @@ class ProfilesController extends Controller
 			$areFriends = false;
 		}
 		
-		$user = App\User::where('id', '=', $id)->first();
+		$user = User::where('id', '=', $id)->first();
 		
-		return view('profile', ['user' => $user, 'areFriends' => $areFriends]);
+		$friends_count = 0;
+		$friends_count += DB::table('friends')->whereRaw('id_one = ' . $id . ' OR id_two = ' . $id)->count();
+		
+		return view('profile', ['user' => $user, 'friends_count' => $friends_count, 'areFriends' => $areFriends, 'friendship' => $friendship]);
 		
 	}
     
@@ -40,14 +44,14 @@ class ProfilesController extends Controller
 		$username = request('currentUsername');
 		$friend = request('friend');
 		
-		$user_id = App\User::where('name', '=', $username)->first()->id;
-		$friend_id = App\User::where('name', '=', $friend)->first()->id;
+		$user_id = User::where('name', '=', $username)->first()->id;
+		$friend_id = User::where('name', '=', $friend)->first()->id;
 		
 		$friends = [$user_id, $friend_id];
 		
 		sort($friends, SORT_NUMERIC);
 			
-		DB::table('friends')->insert(['id_one' => $friends[0], 'id_two' => $friends[1]]);
+		DB::table('friends')->insert(['id_one' => $friends[0], 'id_two' => $friends[1], 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
 		
 		return $friends;
 		
