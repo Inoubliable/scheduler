@@ -17,21 +17,21 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-Route::post('/home', 'HomeController@store');
-Route::post('/personalSchedules', 'PersonalScheduleController@update'); // should be patch
-Route::post('/removeSchedule', 'ScheduleController@store'); // should be delete
-Route::post('/scheduleUser', 'ScheduleUserController@store');
-Route::get('/chat', 'ChatController@index');
-Route::post('/chat', 'ChatController@store');
-Route::get('/chatHistory', 'ChatHistoryController@index');
-Route::get('/profileImage', 'ProfileImageController@index');
-Route::post('/profileImage', 'ProfileImageController@store');
-Route::get('/myProfile', 'MyProfileController@index');
-Route::get('/settings', 'SettingsController@index');
-Route::get('/profile/{id}', 'ProfilesController@index');
-Route::post('/addFriend', 'ProfilesController@store');
-Route::get('/chatFocus', 'ChatFocusController@index');
-Route::get('/search', 'SearchController@index');
-Route::post('/changeEmail', 'ChangeEmailController@store');
-Route::post('/changePassword', 'ChangePasswordController@store');
+Route::get('/home', 'HomeController@index')->middleware('auth');
+Route::post('/home', 'HomeController@store')->middleware('auth');
+Route::post('/personalSchedules', 'PersonalScheduleController@update')->middleware('auth'); // should be patch
+Route::post('/removeSchedule', 'ScheduleController@store')->middleware('auth'); // should be delete
+Route::post('/scheduleUser', 'ScheduleUserController@store')->middleware('auth');
+Route::get('/chat', 'ChatController@index')->middleware('auth');
+Route::post('/chat', 'ChatController@store')->middleware('auth');
+Route::get('/chatHistory', 'ChatHistoryController@index')->middleware('auth');
+Route::get('/profileImage', 'ProfileImageController@index')->middleware('auth');
+Route::post('/profileImage', 'ProfileImageController@store')->middleware('auth');
+Route::get('/myProfile', 'MyProfileController@index')->middleware('auth');
+Route::get('/settings', 'SettingsController@index')->middleware('auth');
+Route::get('/profile/{id}', 'ProfilesController@index')->middleware('auth');
+Route::post('/addFriend', 'ProfilesController@store')->middleware('auth');
+Route::get('/chatFocus', 'ChatFocusController@index')->middleware('auth');
+Route::get('/search', 'SearchController@index')->middleware('auth');
+Route::post('/changeEmail', 'ChangeEmailController@store')->middleware('auth');
+Route::post('/changePassword', 'ChangePasswordController@store')->middleware('auth');
